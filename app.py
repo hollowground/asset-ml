@@ -6,7 +6,13 @@ import numpy as np
 import os
 
 MODEL_PATH = "models/multi_class_asset_class.keras"
-MODEL_CLASSES = sorted(os.listdir("dataset"))
+# List to store folder names
+MODEL_CLASSES = []
+input_file = "cat_names.txt"
+with open(input_file, "r") as file:
+    MODEL_CLASSES = file.read().splitlines()
+
+# MODEL_CLASSES = sorted(os.listdir("dataset"))
 # MODEL_CLASSES = os.listdir("dataset")
 st.set_option("deprecation.showfileUploaderEncoding", False)
 
