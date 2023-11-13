@@ -1,11 +1,12 @@
 import streamlit as st
 import tensorflow as tf
 import cv2
+from keras.models import load_model
 from PIL import Image, ImageOps
 import numpy as np
 import os
 
-MODEL_PATH = "models/multi_class_asset_class.keras"
+# MODEL_PATH = "models/multi_class_asset_class.keras"
 # List to store folder names
 MODEL_CLASSES = []
 input_file = "cat_names.txt"
@@ -19,7 +20,7 @@ st.set_option("deprecation.showfileUploaderEncoding", False)
 
 @st.cache_resource
 def load_ml_model():
-    model = tf.keras.models.load_model(MODEL_PATH)
+    model = load_model(os.path.join("models", "multi_class_asset_class.keras"))
     return model
 
 
