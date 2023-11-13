@@ -18,12 +18,12 @@ st.set_option("deprecation.showfileUploaderEncoding", False)
 
 
 @st.cache_resource
-def load_model():
+def load_ml_model():
     model = tf.keras.models.load_model(MODEL_PATH)
     return model
 
 
-model = load_model()
+model = load_ml_model()
 
 st.write(
     """
