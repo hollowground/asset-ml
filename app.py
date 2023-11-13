@@ -20,7 +20,7 @@ st.set_option("deprecation.showfileUploaderEncoding", False)
 
 @st.cache_resource
 def load_ml_model():
-    model = load_model(os.path.join("models", "multi_class_asset_class.keras"))
+    model = load_model(os.path.join("models", "multi_class_asset_class.h5"))
     return model
 
 
